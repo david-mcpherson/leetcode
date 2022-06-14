@@ -1,29 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include <iostream>
-
-#include "solution.h"
 
 using std::cout;
 using std::endl;
+using std::string;
+
+#include "soln_2.h"
 
 
-void unitTest(char* input, char* expected) {
-    char* result = longestPalindrome(input);
-    if (strcmp(expected, result)) {
+void unitTest(string input, string expected) {
+    string result = longestPalindrome(input);
+    if (expected != result) {
         cout << "FAILED" << endl << "Expected: " << expected << endl << "Actual: " << result << endl;
         exit(1);
     }
-    delete result;
 }
 
 
 int main() {
+    unitTest("a", "a");
     unitTest("babad", "bab");
     unitTest("cbbd", "bb");
-    unitTest("a", "a");
+    unitTest("bananas", "anana");
     
     cout << "PASSED ALL TESTS" << endl;
     return 0;
