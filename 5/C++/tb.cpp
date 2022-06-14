@@ -4,7 +4,7 @@ using std::cout;
 using std::endl;
 using std::string;
 
-#include "soln_2.h"
+#include "solution.h"
 
 
 void unitTest(string input, string expected) {
